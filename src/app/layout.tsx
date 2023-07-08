@@ -6,7 +6,7 @@ const manrope = Manrope({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Fast Forward Trucking Systems",
-  description: "Fast Forward Trucking Systems",
+  description: "Fast Forward Trucking Systems Pvt Ltd.",
 };
 
 export default function RootLayout({

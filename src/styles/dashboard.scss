@@ -1,0 +1,39 @@
+.main-dashboard {
+    height: 100vh;
+    position: relative;
+    &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-image: url('/images/trucks.jpg');
+        opacity: 0.15;
+        z-index: -1;
+        background-position: center;
+        background-size: cover;
+    }
+    .main-content {
+        .db-options button {
+            @apply shadow-lg;
+            svg {
+            margin-right: 0.5rem;
+        }}
+        .tile {
+            background-color: white;
+            color: var(--primary);
+            .tile-title{
+                object svg {
+                        fill: black;
+                    }
+
+            }
+            .tile-body {
+                .tile-count {
+
+                }
+            }
+        }
+    }
+}

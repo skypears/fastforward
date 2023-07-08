@@ -1,7 +1,5 @@
-
-import Header from '../components/Header';
-import Sidebar from '../components/Sidebar';
 import Dashboard from '../components/Dashboard';
+import '../styles/dashboard.scss';
 export default function Home() {
   return (
    <Dashboard></Dashboard>
