@@ -1,7 +1,8 @@
 .main-dashboard {
-    height: 100vh;
+
     position: relative;
-    &::after {
+
+    &::before {
         position: absolute;
         top: 0;
         left: 0;
@@ -14,26 +15,175 @@
         background-position: center;
         background-size: cover;
     }
+
     .main-content {
-        .db-options button {
-            @apply shadow-lg;
-            svg {
-            margin-right: 0.5rem;
-        }}
+        .btn:hover img {
+            filter: brightness(0) invert(1);
+        }
+
         .tile {
-            background-color: white;
-            color: var(--primary);
-            .tile-title{
-                object svg {
-                        fill: black;
+            background: white;
+            color: var(--bs-info);
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+            overflow: hidden;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+            
+            &::after {
+                content: '';
+                position: absolute;
+                top: 1.2rem;
+                right: 0;
+                width: 120px;
+                height: 50px;
+                background-color: var(--bs-info);
+                border-top-left-radius: 50px;
+                border-bottom-left-radius: 50px;
+                z-index: -1;
+                transition: all 0.2s ease-in-out;
+            }
+
+            &:hover {
+                // background: var(--bs-info);
+                color: white;
+
+                &::after {
+                    width: 100%;
+                    top: 0;
+                    height: 100%;
+                    border-radius: 0;
+                }
+
+                .total-data h5 {
+                    color: white;
+                }
+
+                .tile-title {
+                    .tile-name {
+                        color: white;
                     }
 
+                    .tile-icon img {
+                        filter: brightness(0) invert(1);
+                        ;
+                    }
+                }
+
+                .tile-body .tile-count-item {
+                    filter: brightness(0) invert(1);
+                }
             }
+
+            .tile-title {
+                .tile-icon {
+                    position: relative;
+                }
+
+                .tile-name {
+                    font-size: 1.5rem;
+                }
+            }
+
+            .total-data h5 {
+                font-size: 2rem;
+                color: white;
+            }
+
             .tile-body {
                 .tile-count {
+                    @mixin tile-pic($name) {
+                        .tile-count-item {
+                            &.#{$name} {
+                                position: relative;
+                                padding-left: 2.25rem;
 
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: 2rem;
+                                    height: 2rem;
+                                    background-image: url("/icons/#{$name}.svg");
+                                    background-size: cover;
+                                    background-position: center;
+                                }
+                            }
+
+                            p {
+                                font-size: 14px;
+                                line-height: 1rem;
+
+                                &.count {
+                                    font-weight: 900;
+                                }
+
+                                &.name {
+                                    font-weight: 500;
+                                }
+                            }
+                        }
+                    }
+
+                    @each $name in 'delivered',
+                    'new',
+                    'en-route' {
+                        @include tile-pic('loads-' +$name);
+                    }
+
+                    @each $name in 'applicants',
+                    'hired',
+                    'terminated' {
+                        @include tile-pic('drivers-' +$name);
+                    }
+
+                    @each $name in 'customers',
+                    'vendors'
+
+                        {
+                        @include tile-pic('partners-' +$name);
+                    }
+
+                    @each $name in 'trucks',
+                    'trailers'
+
+                        {
+                        @include tile-pic('equipments-' +$name);
+                    }
                 }
             }
         }
     }
+
+    .medium_tile {
+        min-height: 72px;
+    }
+
+    .small_tile {
+        min-height: 40px;
+    }
+}
+
+.TilePopUp button:hover img {
+    filter: brightness(0) invert(1);
+    ;
+}
+
+.text-info {
+    color: var(--bs-info) !important;
+}
+
+.btn-outline-info {
+   
+    background-color: white;
+
+    &:hover {
+        color: white !important;
+        background-color: var(--bs-info);
+    }
+}
+
+.modaltile.btn:hover img {
+    filter: brightness(0) invert(1);
 }

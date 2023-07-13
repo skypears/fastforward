@@ -1,17 +1,48 @@
-import Image from "next/image";
-export default function Header() {
+import Link from "next/link";
+import { UserMenu } from "./Dashboard";
+import { List, TextIndentLeft } from "react-bootstrap-icons";
+import { useState } from "react";
+type headerProps = {
+  children?: React.ReactNode;
+};
+export default function Header({ children }: headerProps) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const toggleSidebar = () => {
+    document.querySelector(".sidebar")?.classList.toggle("open");
+    setSidebarOpen(!sidebarOpen);
+  };
   return (
-    <header className="main-header">
-      <div className="main-header-left">
-        <Image
-          src="/images/fastforward.png"
-          alt="ff-logo"
-          height={50}
-          width={140}
-        />
-        <div className="sidebar-toggler"></div>
-      </div>
-      <div className="main-header-right"></div>
-    </header>
+    <>
+      <style>
+        {`
+        .usermenu.dropdown-toggle::after {
+          content: unset;
+        }
+        .left-section {
+          min-width: 215px;
+        }
+        `}
+      </style>
+      <header>
+        <nav className="bg-white py-2 d-flex px-2 border border-bottom">
+          <div className="d-flex justify-content-between align-items-center left-section">
+            <Link href={"/"}>
+              <img src="/images/fastforward.png" alt="" height={50} />
+            </Link>
+            <div className="sidebar-toggler">
+              <Link href="" onClick={() => toggleSidebar()}>
+                {!sidebarOpen ? (
+                  <List size={32} />
+                ) : (
+                  <TextIndentLeft size={32} />
+                )}
+              </Link>
+            </div>
+          </div>
+          <div className="d-flex w-100">{children}</div>
+          <UserMenu />
+        </nav>
+      </header>
+    </>
   );
 }

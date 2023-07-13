@@ -1,7 +1,29 @@
 
-@tailwind utilities;
 
 $primary: #21529d;
-$info: #418ECB; 
+$info: #418ECB;
 
-@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap';
+// :root{
+//     --bs-primary: #21529d;
+//     --bs-primary-rgb: 33, 82, 157;
+//     --bs-info: #418ecb;
+//     --bs-info-rgb: 65, 142, 203;
+// }
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.25rem;
+}
+
+::-webkit-scrollbar-track {
+    background: #fcfcfc;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $info;
+}
+
+::-webkit-scrollbar-corner {
+    background: #760e6d;
+}

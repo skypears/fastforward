@@ -1,7 +1,7 @@
-import Dashboard from '../components/Dashboard';
-import '../styles/dashboard.scss';
+"use client"
+import { useRouter } from "next/navigation";
+
 export default function Home() {
-  return (
-   <Dashboard></Dashboard>
-  )
+const router = useRouter();
+ router.push("/dashboard");
 }
