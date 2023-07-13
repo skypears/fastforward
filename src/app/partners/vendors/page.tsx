@@ -1,3 +1,3 @@
-export const Vendors = () => {
+export default function Vendors() {
   return <div>Vendors</div>;
-};
+}
