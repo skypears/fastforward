@@ -6,6 +6,7 @@ import Link from "next/link";
 import Sidebar from "@/components/Sidebar";
 
 import Content from "@/components/Content";
+import { useState } from "react";
 
 const tableData = {
   tableHeaders: [
@@ -60,7 +61,7 @@ export default function Loads() {
       "Closed",
     ],
   };
-
+  const [NewPopUpOpen, setNewPopUpOpen] = useState(false);
   return (
     <div className="main-section">
       <Header>
@@ -106,6 +107,7 @@ export default function Loads() {
             variant="outline-primary"
             size="sm"
             className="text-nowrap d-flex align-items-center gap-1"
+            onClick={() => setNewPopUpOpen(!NewPopUpOpen)}
           >
             <span>New Load</span>
             <PlusCircle size={16} />
@@ -115,6 +117,7 @@ export default function Loads() {
       <div className="content d-flex">
         <Sidebar filters={loadsFilters} />
         <Content
+          popUpOpen={NewPopUpOpen}
           headers={tableData.tableHeaders}
           data={tableData.tableRowData}
         />

@@ -49,6 +49,23 @@
         height: calc(100vh - 70px);
         padding: 1.5rem;
         overflow-y: auto;
+        .new-popup {
+                .form-label {
+                    margin-bottom: 0;
+                }
+        
+                .flex-item {
+                    flex-grow: 1;
+                    flex-basis: 0;
+        
+                    h4,
+                    h6 {
+                        margin-bottom: 1.5rem;
+                        font-weight: bold;
+                    }
+                }
+        
+            }
     }
 
     .table-data thead tr th {

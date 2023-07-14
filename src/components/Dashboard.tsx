@@ -18,7 +18,7 @@ const dashboardTiles = {
         {
           title: "Create A Load",
           icon: "/icons/create-a-load.svg",
-          link: "/loads/create",
+          link: "/loads#create",
         },
         {
           title: "View Existing Loads",
@@ -59,12 +59,12 @@ const dashboardTiles = {
         {
           title: "Customers",
           icon: "/icons/partners-customers.svg",
-          link: "/loads/create",
+          link: "/partners/customers",
         },
         {
           title: "Vendors",
           icon: "/icons/partners-vendors.svg",
-          link: "/loads",
+          link: "/partners/vendors",
         },
       ],
     },
@@ -79,66 +79,65 @@ const dashboardTiles = {
         {
           title: "Add Equipment",
           icon: "/icons/create-a-load.svg",
-          link: "/loads/create",
+          link: "",
         },
         {
           title: "View All Equipments",
           icon: "/icons/view-existing-loads.svg",
-          link: "/loads",
+          link: "",
         },
       ],
     },
   ],
-  mediumTiles:[
-  {
-    name: "Fuel",
-    icon: "/icons/fuel.svg",
-    link: "/fuel",
-  },
-  {
-    name: "Driver Payroll",
-    icon: "/icons/driver-payroll.svg",
-    link: "/driver-payroll",
-  },
-  {
-    name: "Accounts",
-    icon: "/icons/accounts.svg",
-    link: "/accounts",
-  },
-  {
-    name: "Reports",
-    icon: "/icons/reports.svg",
-    link: "/reports",
-  },
+  mediumTiles: [
+    {
+      name: "Fuel",
+      icon: "/icons/fuel.svg",
+      link: "/fuel",
+    },
+    {
+      name: "Driver Payroll",
+      icon: "/icons/driver-payroll.svg",
+      link: "/driver-payroll",
+    },
+    {
+      name: "Accounts",
+      icon: "/icons/accounts.svg",
+      link: "/accounts",
+    },
+    {
+      name: "Reports",
+      icon: "/icons/reports.svg",
+      link: "/reports",
+    },
   ],
   smallTiles: [
     {
-    name: "Users",
-    icon: "/icons/users.svg",
-    link: "/users",
-  },
-  {
-    name: "Data Library",
-    icon: "/icons/data-library.svg",
-    link: "/data-library",
-  },
-  {
-    name: "Doc Exchange",
-    icon: "/icons/docs-exchange.svg",
-    link: "/docs-exchange",
-  },
-  {
-    name: "IFTA",
-    icon: "/icons/agreement.svg",
-    link: "/ifta",
-  },
-  ]
+      name: "Users",
+      icon: "/icons/users.svg",
+      link: "/users",
+    },
+    {
+      name: "Data Library",
+      icon: "/icons/data-library.svg",
+      link: "/data-library",
+    },
+    {
+      name: "Doc Exchange",
+      icon: "/icons/docs-exchange.svg",
+      link: "/docs-exchange",
+    },
+    {
+      name: "IFTA",
+      icon: "/icons/agreement.svg",
+      link: "/ifta",
+    },
+  ],
 };
 
 export default function Dashboard() {
   return (
     <section className="main-dashboard">
-     
       <Appheader />
       <Container className="main-content py-2 px-4" fluid>
         <Row className="mb-3">
@@ -210,17 +209,20 @@ export default function Dashboard() {
                 <div className="section-header d-flex justify-content-between">
                   <div className="d-flex align-items-center gap-2">
                     <Badge color="primary" className="rounded-circle p-2">
-                      <Box size={24}/>
+                      <Box size={24} />
                     </Badge>
-                    
-                     <h5 className="text-info fw-bold mb-0">Sales Report</h5>
+
+                    <h5 className="text-info fw-bold mb-0">Sales Report</h5>
                   </div>
-                 
-                    
+
                   <div className="d-flex gap-3">
                     <Dropdown>
-                      <Dropdown.Toggle variant="outline-secondary" id="monthly" className="d-flex gap-2 align-items-center">
-                        <Calendar2Minus/>
+                      <Dropdown.Toggle
+                        variant="outline-secondary"
+                        id="monthly"
+                        className="d-flex gap-2 align-items-center"
+                      >
+                        <Calendar2Minus />
                         Monthly
                       </Dropdown.Toggle>
 
@@ -234,9 +236,13 @@ export default function Dashboard() {
                         </Dropdown.Item>
                       </Dropdown.Menu>
                     </Dropdown>
-                    <Button variant="light" className="text-primary d-flex gap-2 align-items-center">
-                      <Download/>
-                      Download Report</Button>
+                    <Button
+                      variant="light"
+                      className="text-primary d-flex gap-2 align-items-center"
+                    >
+                      <Download />
+                      Download Report
+                    </Button>
                   </div>
                 </div>
                 <section style={{ minHeight: "300px" }}></section>
@@ -292,7 +298,7 @@ export default function Dashboard() {
     </section>
   );
 }
-export function UserMenu({showName}: {showName?: boolean}) {
+export function UserMenu({ showName }: { showName?: boolean }) {
   return (
     <Dropdown>
       <Dropdown.Toggle
@@ -332,22 +338,22 @@ function Appheader() {
           style={{ width: "250px" }}
         >
           <Link href={"/"}>
-           <Image
-            src="/images/fastforward.png"
-            alt=""
-            width={180}
-            height={64}
-            priority={true}
-          />
+            <Image
+              src="/images/fastforward.png"
+              alt=""
+              width={180}
+              height={64}
+              priority={true}
+            />
           </Link>
-         
+
           <div className="sidebar-toggler">
             <Link href={"#"}></Link>
           </div>
         </div>
         <div className="d-flex justify-content-end align-items-center column-gap-3">
           <div className="user-menu">
-            <UserMenu showName/>
+            <UserMenu showName />
           </div>
           <div className="messages">
             <Button variant="link" size="sm">
@@ -414,7 +420,7 @@ function MainTile({ name, icon, data, options }: TileProps) {
                 <Image src={icon} height={32} width={32} alt="Image"></Image>
               </div>
               <h5 className="fw-bold tile-name mb-0 ms-3 d-flex align-items-center">
-                {name ?? "Loads"}
+                {name}
               </h5>
             </div>
             <div className="total-data">

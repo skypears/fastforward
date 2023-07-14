@@ -3,8 +3,8 @@ import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import Content from "@/components/Content";
 import { InputGroup, Form, Button } from "react-bootstrap";
-import { Search, Link, Sliders2, PlusCircle } from "react-bootstrap-icons";
-
+import { Search, Sliders2, PlusCircle } from "react-bootstrap-icons";
+import Link from "next/link";
 const tableData = {
   tableHeaders: [
     "#",
@@ -83,7 +83,7 @@ export default function Drivers() {
               className="border-start-0 border-end-0"
             />
             <InputGroup.Text className="bg-white">
-              <Link href={"#!"}>
+              <Link href="#!">
                 <Sliders2 size={16} />
               </Link>
             </InputGroup.Text>

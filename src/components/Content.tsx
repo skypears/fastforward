@@ -1,14 +1,19 @@
 "use client";
 import Link from "next/link";
-import { Table } from "react-bootstrap";
+import { Collapse, Table } from "react-bootstrap";
 import { SortDown } from "react-bootstrap-icons";
+import { NewLoad } from "./new-load-section";
+
 type contentProps = {
   headers: string[];
   data?: string[][];
+  popUpOpen?: boolean;
 };
-export default function Content({ headers, data }: contentProps) {
+export default function Content({ headers, data, popUpOpen }: contentProps) {
   return (
     <div className="aria-content ">
+      <NewLoad open={popUpOpen} />
+
       <Table responsive hover className="table-data text-nowrap">
         <thead>
           <tr>
