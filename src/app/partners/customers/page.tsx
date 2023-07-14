@@ -54,17 +54,7 @@ const tableData = {
 export default function Customers() {
   const loadsFilters = {
     forPage: "Loads",
-    filterItems: [
-      "All",
-      "New",
-      "Canceled",
-      "TONU",
-      "Dispatched",
-      "En-Route",
-      "Picked-Up",
-      "Delivered",
-      "Closed",
-    ],
+    filterItems: ["All", "New"],
   };
   const [NewPopUpOpen, setNewPopUpOpen] = useState(false);
   return (
@@ -109,7 +99,7 @@ export default function Customers() {
             className="text-nowrap d-flex align-items-center gap-1"
             onClick={() => setNewPopUpOpen(!NewPopUpOpen)}
           >
-            <span>New Load</span>
+            <span>New Customer</span>
             <PlusCircle size={16} />
           </Button>
         </div>
