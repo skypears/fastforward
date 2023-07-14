@@ -99,7 +99,7 @@ export default function Vendors() {
             className="text-nowrap d-flex align-items-center gap-1"
             onClick={() => setNewPopUpOpen(!NewPopUpOpen)}
           >
-            <span>New Customer</span>
+            <span>New Vendor</span>
             <PlusCircle size={16} />
           </Button>
         </div>
