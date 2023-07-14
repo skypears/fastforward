@@ -53,7 +53,7 @@ const tableData = {
 };
 export default function Customers() {
   const loadsFilters = {
-    forPage: "Loads",
+    forPage: "Customers",
     filterItems: ["All", "New"],
   };
   const [NewPopUpOpen, setNewPopUpOpen] = useState(false);
