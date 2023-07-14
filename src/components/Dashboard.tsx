@@ -39,7 +39,7 @@ const dashboardTiles = {
         {
           title: "Create a Profile",
           icon: "/icons/create-a-load.svg",
-          link: "/drivers/create",
+          link: "/drivers#create",
         },
         {
           title: "View Drivers",
