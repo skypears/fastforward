@@ -337,7 +337,7 @@ function Appheader() {
           className="d-flex justify-content-between align-items-center"
           style={{ width: "250px" }}
         >
-          <Link href={"/"}>
+          <Link href={"/dashboard"}>
             <Image
               src="/images/fastforward.png"
               alt=""
@@ -347,9 +347,9 @@ function Appheader() {
             />
           </Link>
 
-          <div className="sidebar-toggler">
+          {/* <div className="sidebar-toggler">
             <Link href={"#"}></Link>
-          </div>
+          </div> */}
         </div>
         <div className="d-flex justify-content-end align-items-center column-gap-3">
           <div className="user-menu">
@@ -419,7 +419,7 @@ function MainTile({ name, icon, data, options }: TileProps) {
               <div className="tile-icon d-flex align-items-center">
                 <Image src={icon} height={32} width={32} alt="Image"></Image>
               </div>
-              <h5 className="fw-bold tile-name mb-0 ms-3 d-flex align-items-center">
+              <h5 className="fw-bold tile-name mb-0 ms-2 d-flex align-items-center">
                 {name}
               </h5>
             </div>

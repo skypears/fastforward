@@ -1,16 +1,36 @@
 import Link from "next/link";
 import { UserMenu } from "./Dashboard";
-import { List, TextIndentLeft } from "react-bootstrap-icons";
+import {
+  FiletypePdf,
+  List,
+  PlusCircle,
+  Search,
+  Sliders2,
+  TextIndentLeft,
+} from "react-bootstrap-icons";
 import { useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Dropdown, Form, InputGroup } from "react-bootstrap";
 type headerProps = {
-  children?: React.ReactNode;
+  pageName?: string;
+  period?: boolean;
+  exportMenu?: boolean;
+  nbToggle?: () => void;
+  sidebarToggle?: () => void;
+  searchToggle?: () => void;
 };
-export default function Header({ children }: headerProps) {
+export default function Header({
+  pageName,
+  period,
+  exportMenu,
+  nbToggle,
+  sidebarToggle,
+  searchToggle,
+}: headerProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
   const toggleSidebar = () => {
-    document.querySelector(".sidebar")?.classList.toggle("open");
     setSidebarOpen(!sidebarOpen);
+    sidebarToggle();
   };
   return (
     <>
@@ -40,7 +60,79 @@ export default function Header({ children }: headerProps) {
               </Button>
             </div>
           </div>
-          <div className="d-flex w-100">{children}</div>
+          <div className="d-flex w-100">
+            <div className="section-info d-flex align-items-center ps-4 gap-3">
+              <h4 className="text-start mb-0 me-4 fw-bold">{pageName}s</h4>
+
+              {period && (
+                <>
+                  <div className="">
+                    <span className="x-small fw-bold">Period</span>
+                    <Dropdown>
+                      <Dropdown.Toggle
+                        variant="secondary"
+                        size="sm"
+                        className="border-0 p-0 px-2 d-flex column-gap-2 align-items-center"
+                      >
+                        All
+                      </Dropdown.Toggle>
+                      <Dropdown.Menu>
+                        <Dropdown.Item href="">This Year</Dropdown.Item>
+                        <Dropdown.Item href="">This Month</Dropdown.Item>
+                        <Dropdown.Item href="">This Week</Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </div>
+                </>
+              )}
+              {exportMenu && (
+                <>
+                  <div className="d-flex align-items-center gap-1">
+                    <span>Export</span>
+                    <Link href={"#!"}>
+                      <FiletypePdf size={16} />
+                    </Link>
+                    <Link href={"#!"}>
+                      <FiletypePdf size={16} />
+                    </Link>
+                    <Link href={"#!"}>
+                      <FiletypePdf size={16} />
+                    </Link>
+                  </div>
+                </>
+              )}
+            </div>
+            <div className="d-flex justify-content-end ms-auto align-items-center column-gap-2">
+              <InputGroup className="shadow-sm border-secondary">
+                <InputGroup.Text className="bg-white">
+                  <Search size={16} />
+                </InputGroup.Text>
+                <Form.Control
+                  placeholder="Search"
+                  className="border-start-0 border-end-0"
+                />
+                <InputGroup.Text className="bg-white">
+                  <Button
+                    variant="link"
+                    size="sm"
+                    className="p-0"
+                    onClick={() => searchToggle()}
+                  >
+                    <Sliders2 size={16} />
+                  </Button>
+                </InputGroup.Text>
+              </InputGroup>
+              <Button
+                variant="outline-primary"
+                size="sm"
+                className="text-nowrap d-flex align-items-center gap-1"
+                onClick={() => nbToggle()}
+              >
+                <span>New</span>
+                <PlusCircle size={16} />
+              </Button>
+            </div>
+          </div>
           <UserMenu />
         </nav>
       </header>

@@ -1,9 +1,10 @@
 import './globals.scss';
 import "@/styles/inner-pages.scss";
+import { Metadata } from "next";
 import { Manrope } from "next/font/google";
 
 const manrope = Manrope({ subsets: ["latin"] });
-export const metadata = {
+export const metadata: Metadata = {
   title: "Fast Forward Trucking Systems",
   description: "Fast Forward Trucking Systems Pvt Ltd.",
   icons: {

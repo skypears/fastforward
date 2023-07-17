@@ -1,70 +1,21 @@
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { Check } from "react-bootstrap-icons";
-type NewLoadProps = {
-  isOpen: boolean;
-  onClose?: () => void;
+type loadSearchProps = {
+  open: boolean;
+  toggle: () => void;
 };
-export const NewLoad = ({ isOpen, onClose }: NewLoadProps) => {
+export const LoadSearch = ({ open, toggle }: loadSearchProps) => {
   return (
     <>
-      {isOpen && (
+      {open && (
         <div
           className="form-container new-popup p-3"
           id="newPopup"
           style={{ backgroundColor: "#E9F3FB" }}
         >
-          <Form className="d-flex small align-items-end gap-3">
+          <Form className="d-flex small align-items-start gap-3">
             <div className="flex-item">
-              <h4 className="text-primary">New Load</h4>
-              <Form.Group className="mb-2">
-                <Form.Label>Status</Form.Label>
-                <Form.Select size="sm">
-                  {[
-                    "All",
-                    "New",
-                    "Canceled",
-                    "TONU",
-                    "Dispatched",
-                    "En-Route",
-                    "Picked-Up",
-                    "Delivered",
-                    "Closed",
-                  ].map((item, idx) => (
-                    <option key={idx} value={item}>
-                      {item}
-                    </option>
-                  ))}
-                </Form.Select>
-              </Form.Group>
-              <Form.Group className="mb-2">
-                <Form.Label>Billing Status</Form.Label>
-                <Form.Select size="sm">
-                  {[
-                    "Pending",
-                    "BOL received",
-                    "Invoiced",
-                    "Sent to factoring",
-                    "Funded",
-                    "Paid",
-                  ].map((item, idx) => (
-                    <option key={idx} value={item}>
-                      {item}
-                    </option>
-                  ))}
-                </Form.Select>
-              </Form.Group>
-              <Form.Group className="mb-2">
-                <Form.Label>Dispatcher</Form.Label>
-                <Form.Select size="sm">
-                  {["AK Yadav", "ACP Pradyuman", "Daya", "Abhijeet"].map(
-                    (item, idx) => (
-                      <option key={idx} value={item}>
-                        {item}
-                      </option>
-                    )
-                  )}
-                </Form.Select>
-              </Form.Group>
+              <h4 className="text-primary">Search Filters</h4>
             </div>
             <div className="flex-item">
               <h6 className="">Pick Up</h6>
@@ -165,10 +116,6 @@ export const NewLoad = ({ isOpen, onClose }: NewLoadProps) => {
                 <Form.Control type="text" size="sm" placeholder="" />
               </Form.Group>
               <Form.Group className="mb-2">
-                <Form.Label>Attachments</Form.Label>
-                <Form.Control type="file" size="sm" placeholder="" />
-              </Form.Group>
-              <Form.Group className="mb-2">
                 <Form.Label></Form.Label>
                 <div className="d-flex gap-3">
                   <Button variant="outline-primary" size="sm">
@@ -178,7 +125,7 @@ export const NewLoad = ({ isOpen, onClose }: NewLoadProps) => {
                   <Button
                     variant="outline-danger"
                     size="sm"
-                    onClick={() => onClose()}
+                    onClick={() => toggle()}
                   >
                     Close
                   </Button>
