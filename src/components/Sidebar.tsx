@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
-
+// import sidebarFilters from "./commonSidebarFilters.json";
 type sidebarProps = {
   filters: {
     forPage: string;
@@ -41,9 +41,7 @@ export const SidebarDD = ({ name, filters }: sidebarDDProps) => {
         href=""
         onClick={() => setOpen(!open)}
         className={`sidebar-dd ps-4 text-start border-0 rounded-0 d-flex align-items-center
-      btn btn-outline-secondary w-100 text-decoration-none py-2 ${
-        open && "active"
-      }`}
+      btn btn-outline-secondary w-100 text-decoration-none py-2 `}
       >
         <span>{name}</span>
       </Link>

@@ -9,7 +9,7 @@ export const LoadSearch = ({ open, toggle }: loadSearchProps) => {
     <>
       {open && (
         <div
-          className="form-container new-popup p-3"
+          className="form-container new-popup p-3 mb-3"
           id="newPopup"
           style={{ backgroundColor: "#E9F3FB" }}
         >

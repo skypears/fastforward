@@ -2,7 +2,7 @@
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import { NewLoad } from "@/components/new-load-section";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import { SortDown } from "react-bootstrap-icons";
 import Link from "next/link";
@@ -74,12 +74,10 @@ export default function Loads() {
         period
         nbToggle={() => {
           setNewPopUpOpen(!NewPopUpOpen);
-          setSearchOpen(false);
         }}
         sidebarToggle={() => setSidebarStatus(!sidebarStatus)}
         searchToggle={() => {
-          setSearchOpen(!NewPopUpOpen);
-          setNewPopUpOpen(false);
+          setSearchOpen(!searchOpen);
         }}
       ></Header>
       <div className="content d-flex">

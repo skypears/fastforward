@@ -58,14 +58,14 @@ export default function Drivers() {
       <Header
         pageName="Driver"
         period
-        nbClick={() => setNewPopUpOpen(!NewPopUpOpen)}
+        nbToggle={() => setNewPopUpOpen(!NewPopUpOpen)}
         sidebarToggle={() => setSidebarStatus(!sidebarStatus)}
       ></Header>
       <div className="content d-flex">
         <Sidebar filters={driversFilters} isOpen={sidebarStatus} />
 
         <div className="aria-content">
-          <NewLoad open={NewPopUpOpen} />
+          <NewLoad isOpen={NewPopUpOpen} />
           <Table responsive hover className="table-data text-nowrap">
             <thead>
               <tr>

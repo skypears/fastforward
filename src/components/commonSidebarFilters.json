@@ -1,0 +1,34 @@
+{
+  "Loads": [
+    "All",
+    "New",
+    "Canceled",
+    "TONU",
+    "Dispatched",
+    "En-Route",
+    "Picked-Up",
+    "Delivered",
+    "Closed"
+  ],
+  "Drivers": ["All", "New", "Hired", "Terminated", "Closed"],
+  "Partners": {
+    "Customers": ["All", "New", "Active", "Inactive"],
+    "Vendors": ["All", "New", "Active", "Inactive"]
+  },
+  "Fuel": {
+    "Fuel Cards": ["All", "Active", "Inactive", "Closed", "Blocked"],
+    "Fuel Transactions": ["All", "Active", "Inactive"],
+    "Fuel Imports": ["All", "Active", "Inactive"]
+  },
+  "Equipments": {
+    "Trucks": ["All", "Active", "Inactive", "In-Transit", "Unavailable", "N/A"],
+    "Trailers": [
+      "All",
+      "Active",
+      "Inactive",
+      "In-Transit",
+      "Unavailable",
+      "N/A"
+    ]
+  }
+}
