@@ -48,7 +48,7 @@ const tableData = {
 };
 export default function Vendors() {
   const vendorFilters = {
-    forPage: "Vendors",
+    pageName: "Vendors",
     filterItems: ["All", "New", "A", "B", "C"],
   };
   const [NewPopUpOpen, setNewPopUpOpen] = useState(false);

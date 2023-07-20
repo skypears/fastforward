@@ -48,7 +48,7 @@ const tableData = {
 
 export default function Drivers() {
   const driversFilters = {
-    forPage: "Drivers",
+    pageName: "Drivers",
     filterItems: ["All", "New", "Hired", "Terminated", "Closed"],
   };
   const [NewPopUpOpen, setNewPopUpOpen] = useState(false);

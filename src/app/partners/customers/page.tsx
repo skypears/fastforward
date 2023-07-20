@@ -54,7 +54,7 @@ const tableData = {
 };
 export default function Customers() {
   const custFilters = {
-    forPage: "Customers",
+    pageName: "Customers",
     filterItems: ["All", "New"],
   };
 

@@ -48,7 +48,7 @@ const tableData = {
 };
 export default function Loads() {
   const loadsFilters = {
-    forPage: "Loads",
+    pageName: "Loads",
     filterItems: [
       "All",
       "New",

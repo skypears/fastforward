@@ -4,7 +4,6 @@
             min-width: 220px;
             width: 220px;
             height: calc(100vh - 70px);
-
         }
 
         overflow: hidden;
@@ -39,6 +38,19 @@
                 border-top: 0;
                 border-left: 0.3em solid transparent;
             }
+&.active {
+    background-color: #B7D1E6;
+    color: black;
+    font-weight: bold;
+}
+}
+
+.filterlinkdd.show {
+    background-color: #B7D1E6;
+
+    .active-item {
+        background-color: #91ABC1;
+    }
         }
     }
 
@@ -49,22 +61,23 @@
         height: calc(100vh - 70px);
         padding: 1.5rem;
         overflow-y: auto;
+
         .new-popup {
-                .form-label {
+            .form-label {
                     margin-bottom: 0;
                 }
-        
+            
                 .flex-item {
                     flex-grow: 1;
                     flex-basis: 0;
-        
+            
                     h4,
                     h6 {
                         margin-bottom: 1.5rem;
                         font-weight: bold;
                     }
                 }
-        
+            
             }
     }
 
