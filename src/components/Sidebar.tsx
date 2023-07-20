@@ -38,7 +38,7 @@ export const SidebarDD = ({ name, filters }: sidebarDDProps) => {
   return (
     <>
       <Link
-        href=""
+        href="#!"
         onClick={() => setOpen(!open)}
         className={`sidebar-dd ps-4 text-start border-0 rounded-0 d-flex align-items-center
       btn btn-outline-secondary w-100 text-decoration-none py-2 `}
@@ -50,7 +50,7 @@ export const SidebarDD = ({ name, filters }: sidebarDDProps) => {
           <li>
             {filters.map((filterItem, index) => (
               <Link
-                href=""
+                href="#!"
                 key={index}
                 className="ps-5 text-start border-0 rounded-0 btn btn-outline-info text-dark small
               w-100 text-decoration-none py-1 d-flex align-items-center gap-2"
