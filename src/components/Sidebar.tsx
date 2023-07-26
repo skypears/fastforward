@@ -41,8 +41,7 @@ export const SidebarDD = ({ name, filters }: sidebarDDProps) => {
   const [open, setOpen] = useState(true);
   return (
     <>
-      <Link
-        href="#!"
+      <div
         onClick={() => setOpen(!open)}
         className={`sidebar-dd ps-4 text-start border-0 rounded-0 d-flex align-items-center
       btn btn-outline-secondary w-100 text-decoration-none py-2 ${
@@ -50,19 +49,18 @@ export const SidebarDD = ({ name, filters }: sidebarDDProps) => {
       }`}
       >
         <span>{name}</span>
-      </Link>
+      </div>
       <div className={`filterlinkdd collapse ${open && "show"}`}>
         <ul className="list-unstyled">
           <li>
             {filters.map((filterItem, index) => (
-              <Link
-                href="#!"
+              <span
                 key={index}
                 className={`ps-5 text-start border-0 rounded-0 btn btn-outline-info text-dark small
               w-100 text-decoration-none py-1 d-flex align-items-center gap-2 sublink sublink_${filterItem}`}
               >
                 <span>{filterItem}</span>
-              </Link>
+              </span>
             ))}
           </li>
         </ul>

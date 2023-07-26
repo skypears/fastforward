@@ -1,7 +1,13 @@
 "use client";
 import Header from "@/components/Header";
-import { Flag, SortDown } from "react-bootstrap-icons";
-import { Table } from "react-bootstrap";
+import {
+  Envelope,
+  FiletypePdf,
+  FiletypeXls,
+  Flag,
+  SortDown,
+} from "react-bootstrap-icons";
+import { Dropdown, Table } from "react-bootstrap";
 import Link from "next/link";
 import Sidebar from "@/components/Sidebar";
 
@@ -57,10 +63,39 @@ export default function Vendors() {
     <div className="main-section">
       <Header
         pageName="Vendor"
-        period
         nbToggle={() => setNewPopUpOpen(!NewPopUpOpen)}
         sidebarToggle={() => setSidebarStatus(!sidebarStatus)}
-      ></Header>
+      >
+        <div className="d-flex align-items-center gap-2">
+          <span className="x-small fw-bold">Period</span>
+          <Dropdown>
+            <Dropdown.Toggle
+              variant="secondary"
+              size="sm"
+              className="border-0 p-0 px-2 d-flex column-gap-2 align-items-center"
+            >
+              All
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="">This Year</Dropdown.Item>
+              <Dropdown.Item href="">This Month</Dropdown.Item>
+              <Dropdown.Item href="">This Week</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </div>
+        <div className="d-flex align-items-center gap-1">
+          <span>Export</span>
+          <Link href={"#!"}>
+            <FiletypePdf size={16} />
+          </Link>
+          <Link href={"#!"}>
+            <FiletypeXls size={16} />
+          </Link>
+          <Link href={"#!"}>
+            <Envelope size={16} />
+          </Link>
+        </div>
+      </Header>
       <div className="content d-flex">
         <Sidebar filters={vendorFilters} isOpen={sidebarStatus} />
 

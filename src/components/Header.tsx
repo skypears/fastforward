@@ -17,14 +17,14 @@ type headerProps = {
   nbToggle?: () => void;
   sidebarToggle?: () => void;
   searchToggle?: () => void;
+  children?: React.ReactNode;
 };
 export default function Header({
   pageName,
-  period,
-  exportMenu,
   nbToggle,
   sidebarToggle,
   searchToggle,
+  children,
 }: headerProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -60,47 +60,10 @@ export default function Header({
               </Button>
             </div>
           </div>
-          <div className="d-flex w-100">
+          <div className="d-flex flex-grow-1">
             <div className="section-info d-flex align-items-center ps-4 gap-3">
-              <h4 className="text-start mb-0 me-4 fw-bold">{pageName}s</h4>
-
-              {period && (
-                <>
-                  <div className="">
-                    <span className="x-small fw-bold">Period</span>
-                    <Dropdown>
-                      <Dropdown.Toggle
-                        variant="secondary"
-                        size="sm"
-                        className="border-0 p-0 px-2 d-flex column-gap-2 align-items-center"
-                      >
-                        All
-                      </Dropdown.Toggle>
-                      <Dropdown.Menu>
-                        <Dropdown.Item href="">This Year</Dropdown.Item>
-                        <Dropdown.Item href="">This Month</Dropdown.Item>
-                        <Dropdown.Item href="">This Week</Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </div>
-                </>
-              )}
-              {exportMenu && (
-                <>
-                  <div className="d-flex align-items-center gap-1">
-                    <span>Export</span>
-                    <Link href={"#!"}>
-                      <FiletypePdf size={16} />
-                    </Link>
-                    <Link href={"#!"}>
-                      <FiletypePdf size={16} />
-                    </Link>
-                    <Link href={"#!"}>
-                      <FiletypePdf size={16} />
-                    </Link>
-                  </div>
-                </>
-              )}
+              <h4 className="text-start mb-0 me-4 fw-bold">{pageName}</h4>
+              {children}
             </div>
             <div className="d-flex justify-content-end ms-auto align-items-center column-gap-2">
               <InputGroup className="shadow-sm border-secondary">
