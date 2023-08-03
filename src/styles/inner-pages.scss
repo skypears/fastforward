@@ -87,3 +87,16 @@
     font-weight: 400;
   }
 }
+.modal :is(.partners, .equipments) .option:nth-child(2){
+  .text-info{
+    color: var(--bs-warning) !important;
+  }
+  .modaltile{
+    border-color: var(--bs-warning) !important;
+    color:var(--bs-warning) !important;;
+    &:hover{
+      background-color: var(--bs-warning) !important;
+      color: white !important;
+    }
+  }
+}
