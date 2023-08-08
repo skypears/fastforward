@@ -1,9 +1,8 @@
-import './globals.scss';
-import "@/styles/inner-pages.scss";
-import { Metadata } from "next";
 import { Manrope } from "next/font/google";
+import "@/styles/inner-pages.scss";
+import "./globals.scss";
+import { Metadata } from "next";
 
-const manrope = Manrope({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Fast Forward Trucking Systems",
   description: "Fast Forward Trucking Systems Pvt Ltd.",
@@ -11,7 +10,6 @@ export const metadata: Metadata = {
     icon: "/favicon.png",
   },
 };
-
 export default function RootLayout({
   children,
 }: {
@@ -19,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body className={manrope.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

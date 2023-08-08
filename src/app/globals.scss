@@ -5,13 +5,17 @@ $info: #418ECB;
 $warning:#FF8761;
 
 @import '~bootstrap/scss/bootstrap';
+@import '~@fontsource/manrope';  
 // :root{
 //     --bs-primary: #21529d;
 //     --bs-primary-rgb: 33, 82, 157;
 //     --bs-info: #418ecb;
 //     --bs-info-rgb: 65, 142, 203;
 // }
-
+body{
+    font-family: "Manrope", sans-serif;
+    scroll-behavior: smooth;
+}
 ::-webkit-scrollbar {
     width: 0.5rem;
     height: 0.5rem;

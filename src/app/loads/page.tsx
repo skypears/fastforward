@@ -1,4 +1,5 @@
 "use client";
+
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import { NewLoad } from "@/components/new-load-section";
@@ -12,6 +13,13 @@ import {
 } from "react-bootstrap-icons";
 import Link from "next/link";
 import { LoadSearch } from "@/components/load-search-filters";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Loads",
+  description: "Loads Page"
+};
+
 const tableData = {
   tableHeaders: [
     "Load",
@@ -68,9 +76,7 @@ export default function Loads() {
   const [NewPopUpOpen, setNewPopUpOpen] = useState(false);
   const [sidebarStatus, setSidebarStatus] = useState(true);
   const [searchOpen, setSearchOpen] = useState(false);
-  useEffect(() => {
-    document.title = "View All Loads";
-  }, []);
+
   useEffect(() => {
     setSidebarStatus(!NewPopUpOpen);
   }, [NewPopUpOpen]);

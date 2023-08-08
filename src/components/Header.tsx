@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { UserMenu } from "./Dashboard";
 import {
-  FiletypePdf,
   List,
   PlusCircle,
   Search,
