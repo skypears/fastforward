@@ -1,4 +1,4 @@
-import LoadsPage from "@/app/loads/LoadsPage";
+import LoadsPage from "./LoadsPage";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Loads",
